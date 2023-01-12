@@ -40,7 +40,7 @@ router.post("/add", (req, res)=>{
 })
 router.delete("/delete",(req,res)=>
 { try{
-  creditCardModel.findByIdAndDelete("63bff520ad46c1b1cc5cab13").then(()=>res.json({"msg": "deleted"})).catch(error=>res.json(error))
+  creditCardModel.findByIdAndDelete(req.params.id).then(()=>res.json({"msg": "deleted"})).catch(error=>res.json(error))
 }
 catch(error){
 res.json(error)
