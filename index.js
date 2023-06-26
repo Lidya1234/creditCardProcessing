@@ -7,12 +7,15 @@ import cardRouter from "./Routes/creditCard.js"
 const app = express();
 app.use(bodyParser.json())
 const port = process.env.PORT || 3000;
-db().then(() => {
-    app.listen(port, "0.0.0.0", () => {
-        console.log(`server running on port ${port}`);
-    })
-}).catch((error) =>
-    console.log("Connection error"))
+app.listen(port, "0.0.0.0", () => {
+    console.log(`server running on port ${port}`);
+})
+// db().then(() => {
+//     app.listen(port, "0.0.0.0", () => {
+//         console.log(`server running on port ${port}`);
+//     })
+// }).catch((error) =>
+//     console.log("Connection error"))
 app.use("/card", cardRouter);
 
 
